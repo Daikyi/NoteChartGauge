@@ -21,6 +21,12 @@ public class Bar extends TimingObject{
 		this.notes = notes;
 	}
 	
+	public void setNote(Note note){
+		
+		this.notes = new ArrayList<Note>();
+		notes.add(note);
+	}
+	
 	public int compareTo(TimingObject o) {
 		
         double result = this.getTimeStamp() - o.getTimeStamp();

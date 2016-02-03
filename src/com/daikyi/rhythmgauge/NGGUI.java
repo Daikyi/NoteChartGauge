@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import com.daikyi.rhythmgauge.difficulty.SMDiffRater;
 import com.daikyi.rhythmgauge.timing.SMFile;
 import com.daikyi.rhythmgauge.timing.Song;
 
@@ -65,7 +66,7 @@ public class NGGUI extends JFrame implements ActionListener{
 			
 			SMFile smfile = (SMFile) song;
 			//for now just get first chart for now, TODO difficulty selector
-			fxPanel.setScene(GraphUtility.getGraph(smfile.getChart(0)));
+			fxPanel.setScene(GraphUtility.getColGraph(new SMDiffRater(smfile.getChart(0))));
 		}
         
         fxPanel.setVisible(true);

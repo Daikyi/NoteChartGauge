@@ -6,5 +6,5 @@ import com.daikyi.rhythmgauge.timing.Chart;
 
 public abstract class DiffRater {
 
-	public abstract ArrayList<Difficulty> getDiffSpectrum(Chart chart);
+	public abstract ArrayList<Difficulty> getDiffSpectrum();
 }

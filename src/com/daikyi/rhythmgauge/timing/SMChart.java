@@ -7,7 +7,9 @@ public class SMChart extends Chart{
 
 	private String difficultyName;
 	
-	public SMChart(){}
+	public SMChart(){
+		super();
+	}
 	
 	public void setDifficultyName(String difficultyName){
 		
@@ -56,6 +58,10 @@ public class SMChart extends Chart{
 
             }
         }
+	}
+	
+	public void addBar(Bar toAdd){
+		structure.add(toAdd);
 	}
 	
 	public void timeStamp(ArrayList<SMBPM> bpms){
@@ -132,15 +138,13 @@ public class SMChart extends Chart{
 		}
 		
 		Collections.sort(barNPS);
-		int tesapo = 0;
 		for(int i = 0; i < barNPS.size(); i++){
             
 			TimingObject curObj = barNPS.get(i);
 			
-			if(curObj instanceof Bar){
+			if(curObj instanceof SMBar){
 				
 				int notes = ((SMBar)curObj).getNumNotes();
-				tesapo += notes;
 				double initTime = curObj.getTimeStamp();
                 int tempCounter = i;
                 boolean flag = true;
@@ -161,7 +165,6 @@ public class SMChart extends Chart{
             	}
 			}	
 		}
-		System.out.println(tesapo);
         for(int i = 0; i < barNPS.size(); i++){
         	
         	TimingObject temp = barNPS.get(i);
