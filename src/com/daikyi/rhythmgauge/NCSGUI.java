@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import com.daikyi.rhythmgauge.timing.SMFile;
+import com.daikyi.rhythmgauge.timing.Song;
+
 import javafx.embed.swing.JFXPanel;
 
 public class NCSGUI extends JFrame implements ActionListener{
@@ -56,7 +59,15 @@ public class NCSGUI extends JFrame implements ActionListener{
     	
 		FileParser file = new SMFileParser(filePath);
 		file.parseFile();
-        fxPanel.setScene(GraphUtility.getGraph(file));
+		
+		Song song = file.getSong();
+		if(song instanceof SMFile){
+			
+			SMFile smfile = (SMFile) song;
+			//for now just get first chart for now, TODO difficulty selector
+			fxPanel.setScene(GraphUtility.getGraph(smfile.getChart(0)));
+		}
+        
         fxPanel.setVisible(true);
     }
     

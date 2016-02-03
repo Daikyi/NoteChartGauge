@@ -4,14 +4,14 @@ import com.daikyi.rhythmgauge.timing.*;
 public abstract class FileParser {
 
 	protected String fileName;
-	protected double[] timeStamps;
-	protected int[] npsValues;
-	
+	protected Song song;
 	public FileParser(String file){
 		fileName = file;
 	}
 	
-	public abstract Song parseFile();
-	public abstract double[] getTimeStamps();
-	public abstract int[] getNPS();
+	public abstract void parseFile();
+	
+	public Song getSong(){
+		return song;
+	}
 }
