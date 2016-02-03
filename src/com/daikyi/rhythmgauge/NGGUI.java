@@ -17,7 +17,7 @@ import com.daikyi.rhythmgauge.timing.Song;
 
 import javafx.embed.swing.JFXPanel;
 
-public class NCSGUI extends JFrame implements ActionListener{
+public class NGGUI extends JFrame implements ActionListener{
 
 	/**
 	 * 
@@ -28,7 +28,7 @@ public class NCSGUI extends JFrame implements ActionListener{
 	private JFXPanel fxPanel = new JFXPanel();
 	private static final JButton loadFile = new JButton("Load File");
 	
-	public NCSGUI(){
+	public NGGUI(){
 		initAndShowGUI();
 	}
 	
@@ -75,7 +75,7 @@ public class NCSGUI extends JFrame implements ActionListener{
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new NCSGUI();
+                new NGGUI();
             }
         });
     }
