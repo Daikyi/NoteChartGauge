@@ -3,6 +3,7 @@ package com.daikyi.rhythmgauge.difficulty;
 import java.util.ArrayList;
 
 import com.daikyi.rhythmgauge.timing.Chart;
+import com.daikyi.rhythmgauge.timing.Note;
 import com.daikyi.rhythmgauge.timing.SMChart;
 
 public class SMDiffRater extends DiffRater{
@@ -15,4 +16,8 @@ public class SMDiffRater extends DiffRater{
 		return null;
 	}
 
+	private ArrayList<Difficulty> getColumnDiff(ArrayList<Note> column){
+		
+		return null;
+	}
 }
